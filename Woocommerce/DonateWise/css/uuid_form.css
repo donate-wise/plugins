@@ -1,0 +1,49 @@
+
+.dw-container{
+    display: flex;
+    flex-flow: row wrap;
+}
+.dw-card {
+    border: solid 1px #ccc;
+    padding: 2em 1em 1em;
+    background: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dw-card:nth-of-type(1){
+    margin-right: 40px;
+}
+.form-section {
+    margin-bottom: 1em;
+    clear: both;
+}
+.form-section input[type=text],
+.form-section input[type=email] {
+    margin: 0.5em 0;
+    width: 50%;
+}
+@media only screen and (max-width: 600px) {
+    .form-section input[type=text],
+    .form-section input[type=email] {
+        width: 90%;
+    }
+}
+.form-section label {
+    font-weight: 500;
+    font-size: 1.2em;
+}
+.form-section li {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+.form-section .widget-preview {
+    float: right;
+    margin: 0 0.5em;
+}
+.form-section .submit {
+    padding: 0.25em 0;
+}
+.form-section-header {
+    color: #999;
+}

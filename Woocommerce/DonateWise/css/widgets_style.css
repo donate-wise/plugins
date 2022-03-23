@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap');
+
+.donatewise_widget_product--logo_foundation, .donatewise_widget_product--footer_logo, .widget_donateWise--popup-cart, .widget_donateWise--popup-logo-foundation, .widget_donateWise--popup-logo-white, .donatewise_widget_floating--image, .donatewise_widget_floating--footer img{
+    display: flex;
+    align-self: center;
+}
+
+.donatewise_widget_product--wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width: 430px;
+    padding: 15px 0;
+}
+.donatewise_widget_product--container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.donatewise_widget_product--content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.donatewise_widget_product--image_wrapper{
+    display: flex;
+    width: 12.5%;
+    align-items: center;
+}
+.donatewise_widget_product--image_wrapper img{
+    max-width: 100%;
+}
+.donatewise_widget_product--more{
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+    width: max-content;
+}
+.donatewise_widget_product--footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.donatewise_widget_product--footer_logo{
+    width: 100px;
+}
+/*MODAL*/
+.widget_donateWise--popup{
+	display: none;
+    visibility: hidden;
+    background: rgba(0,0,0,.8);
+    z-index: 99998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+.widget_donateWise_floating--popup{
+    display: none;
+    visibility: hidden;
+    background: rgba(0,0,0,.8);
+    z-index: 99998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+.widget_donateWise--popup-wrapper{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: transparent;
+    padding: 40px 40px 10px;
+}
+.widget_donateWise--popup-content{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    background: #fff;
+}	
+.widget_donateWise--popup-footer{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.widget_donateWise--popup-close{
+	position: absolute;
+    width: 20px;
+    height: 20px !important;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: transparent;
+}
+.widget_donateWise--popup-close::before{
+	content: "";
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    width: 20px;
+    height: 2px !important;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+.widget_donateWise--popup-close::after{
+	content: "";
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    width: 20px;
+    height: 2px !important;
+    background-color: #fff;
+    transform: rotate(135deg);
+}
+.widget_donateWise--title{
+	font-size: 25px;
+    text-align: center!important;
+}
+.widget_donateWise--popup-container{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 30px 0;
+}
+.widget_donateWise--popup-subtitle{
+	font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center!important;
+}
+.widget_donateWise--popup-box{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.widget_donateWise--popup-cart{
+	height: 80px !important;
+    margin-bottom: 15px;
+}
+.widget_donateWise--popup-text{
+	font-size: 14px;
+}
+.widget_donateWise--popup-logo-foundation{
+	height: 80px !important;
+    margin-bottom: 15px;
+}
+.widget_donateWise--popup-logo-white{
+	height: 30px !important;
+}
+
+
+/* WIDGET FLOATING */
+
+@keyframes widget_floating {
+  0% {opacity: 1; visibility: visible;}
+  100% {opacity: 0; visibility: hidden;}
+}
+@keyframes widget_floating_visible {
+  0% {opacity: 0; visibility: hidden;}
+  100% {opacity: 1; visibility: visible;}
+}
+
+.donatewise_widget_floating--container{
+    font-family: 'Exo 2';
+    position: fixed;
+    z-index: 9999;
+    top: calc(50% - 70px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 7px;
+    width: 112px;
+    height: 140px !important;
+    border: 1px solid #787878;
+    background: #FFF;
+    cursor: pointer;
+    animation: widget_floating_visible .5s;
+    animation-fill-mode: forwards;
+    transition: .5s opacity;
+}
+.donatewise_widget_floating--container.floating-hidden{
+    animation: widget_floating .5s;
+    animation-fill-mode: forwards;
+}
+.dw-container .dw-card .donatewise_widget_floating--container{
+    position: relative !important;
+    top: auto !important;
+}
+.donatewise_widget_floating--header{
+    background: rgb(115,42,245);
+    background: linear-gradient(180deg, rgba(115,42,245,1) 0%, rgba(141,52,240,1) 100%);
+    width: 112px;
+    height: 42px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+.donatewise_widget_floating--header span{
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: 'Exo 2';
+    color: #FFF;
+    font-weight: 700;
+}
+.donatewise_widget_floating--content{
+    padding: 10px;
+    padding-bottom: 5px;
+}
+.donatewise_widget_floating--content > .donatewise_widget_floating--image-wrapper{
+    height: 56px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.donatewise_widget_floating--image{
+    max-height: 56px !important;
+    margin-top: -5px;
+}
+.donatewise_widget_floating--footer{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.donatewise_widget_floating--footer::before{
+    content: '';
+    top: -4px;
+    left: 0;
+    width: 100%;
+    height: 1px !important;
+    background: #cc38f6;
+    position: absolute;
+}
+.donatewise_widget_floating--footer span{
+    font-size: 11px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.donatewise_widget_floating--footer img{
+    height: 17px !important;
+}
