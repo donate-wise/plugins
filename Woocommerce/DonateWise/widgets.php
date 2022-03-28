@@ -1,6 +1,8 @@
 <?php
 
-add_action('wp_enqueue_scripts','widget_product_init');
+if(get_option('donatewise_widget_product_status') && !empty(get_option('donatewise_widget_product')['status']) && get_option('donatewise_widget_product')['status'] == 'active'){
+    add_action('wp_enqueue_scripts','widget_product_init');
+}
 add_action( 'admin_enqueue_scripts', 'widget_product_init' );
 
 function widget_product_init() {

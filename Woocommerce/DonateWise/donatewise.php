@@ -87,9 +87,16 @@ function donatewise_view_dispatcher()
         <a href="?page=donatewise" class="nav-tab <?php if ($action === null): ?>nav-tab-active<?php endif ?>">
             <?php echo 'Settings'; ?>
         </a>
+        <?php if(donatewise_send_request() == 'active' && !empty(get_option('donatewise_uuid'))) {?>
         <a href="?page=donatewise&action=widgets" class="nav-tab <?php if ($action === 'widgets'): ?>nav-tab-active<?php endif ?>">
             <?php echo 'Widgets'; ?>
         </a>
+        <?php }else { ?>
+        <a href="javascript:void(0);" class="nav-tab nav-tab-disable <?php if ($action === 'widgets'): ?>nav-tab-active<?php endif ?>">
+            <?php echo 'Widgets'; ?>
+        <span class="tooltiptext">Enter correct UUID first</span>
+        </a>
+        <?php } ?>
     </nav><?php
 
     if ($action === null) {
@@ -104,7 +111,7 @@ function donatewise_view_dispatcher()
         ?>
         <div class="dw-page">
                 <h2 style="font-size: 22px">Thank you for choosing DonateWise - the all-in-one charity platform for e-commerce.</h2>
-                <span style="display: block">We help online stores boost their revenue by enabling recurring donations to reputable charities via an easy-to-use automated platform.</span><span>In order to continue using the plugin first register at <a href="https://donate-wise.org">donate-wise.org</a> and get your unique ID. Once received - simply paste it in the form below.</span>
+                <span style="display: block">Select which widgets you would like to enable.</span>
             <div class="dw-container">
                 <div class="form-section dw-card" style="max-width: 45%; margin-top: 40px">  
                     <h3>Product widget displayed on the product page</h3> 

@@ -18,10 +18,12 @@ function donatewise_display_uuid_form()
                     <input type="text" id="donatewise_uuid" name="donatewise_uuid" value="<?php echo get_option('donatewise_uuid') ?>" required/>
                 <?php if(donatewise_send_request() == 'active' && !empty(get_option('donatewise_uuid'))) {?>
                 <img src="<?php echo plugin_dir_url( __FILE__ )?>assets/check_ok.svg" width="30" style="margin-bottom: -5px" alt="ok" />
+                </div>
                 <?php }else if(donatewise_send_request() != 'active' && !empty(get_option('donatewise_uuid'))) { ?>
                 <img src="<?php echo plugin_dir_url( __FILE__ )?>assets/check_error.svg" width="22" style="margin-bottom: -5px" alt="error" />
-                <?php } ?>
                 </div>
+                <span style="color: #F00;">The UUID you entered is invalid. Please register at <a href="https://donate-wise.org">https://donate-wise.org</a> to obtain the correct UUID.</span>
+                <?php } ?>
                 <?php submit_button('Zapisz zmiany') ?>
             </div>
         </form>
