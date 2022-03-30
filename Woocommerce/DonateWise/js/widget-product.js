@@ -1,4 +1,18 @@
-document.addEventListener("DOMContentLoaded", function(){
+if( document.readyState !== 'loading' ) {
+    donateWise_modal_product();
+    donateWise_switch();
+    donateWise_modal_floating();
+    donateWise_scroll();
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        donateWise_modal_product();
+        donateWise_switch();
+        donateWise_modal_floating();
+        donateWise_scroll();
+    });
+}
+
+function donateWise_switch(){
     jQuery(".switch input").click(function(){
         var id = jQuery(this).attr('id');
         var checkbox = jQuery('#'+id).is(":checked") ? 1 : 0;
@@ -11,20 +25,20 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log(error);
             jQuery('#'+id).prop('checked', !checkbox);
         });
-    })
-});
+    });
+}
+    
+function openModal_widget_product(){
+    document.getElementById('widget_donateWise--popup').style.display = "flex";
+    document.getElementById('widget_donateWise--popup').style.visibility = "visible";
+}
+function closeModal_widget_product(){
+    document.getElementById('widget_donateWise--popup').style.display = "none";
+    document.getElementById('widget_donateWise--popup').style.visibility = "hidden";
+}  
 
 
-document.addEventListener("DOMContentLoaded", function(){
-	function openModal_widget_product(){
-	    document.getElementById('widget_donateWise--popup').style.display = "flex";
-	    document.getElementById('widget_donateWise--popup').style.visibility = "visible";
-	}
-	function closeModal_widget_product(){
-	    document.getElementById('widget_donateWise--popup').style.display = "none";
-	    document.getElementById('widget_donateWise--popup').style.visibility = "hidden";
-	}   
-
+function donateWise_modal_product(){
     jQuery('#donatewise_widget_product--more').click(function(){
         openModal_widget_product();
     });
@@ -40,22 +54,22 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     });
+}
+	 
 
-});
+
+function openModal_widget_floating(){
+    document.getElementById('widget_donateWise_floating--popup').style.display = "flex";
+    document.getElementById('widget_donateWise_floating--popup').style.visibility = "visible";
+}
+
+function closeModal_widget_floating(){
+    document.getElementById('widget_donateWise_floating--popup').style.display = "none";
+    document.getElementById('widget_donateWise_floating--popup').style.visibility = "hidden";
+}
 
 
-
-document.addEventListener("DOMContentLoaded", function(){
-    function openModal_widget_floating(){
-        document.getElementById('widget_donateWise_floating--popup').style.display = "flex";
-        document.getElementById('widget_donateWise_floating--popup').style.visibility = "visible";
-    }
-
-    function closeModal_widget_floating(){
-        document.getElementById('widget_donateWise_floating--popup').style.display = "none";
-        document.getElementById('widget_donateWise_floating--popup').style.visibility = "hidden";
-    }
-
+function donateWise_modal_floating(){
     jQuery('#donatewise_widget_floating').click(function(){
         openModal_widget_floating();
     });
@@ -71,9 +85,9 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
     });
-});
+}
 
-document.addEventListener("DOMContentLoaded", function(){
+function donateWise_scroll(){
     jQuery(document).scroll(function(){
         if(jQuery('#donatewise_widget_floating').length >= 1){
             if(jQuery(document).scrollTop() > 600)
@@ -83,6 +97,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         
     });
-});
+}
+
 
 
