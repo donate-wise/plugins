@@ -2,6 +2,8 @@
 
 if(get_option('donatewise_widget_product_status') && !empty(get_option('donatewise_widget_product')['status']) && get_option('donatewise_widget_product')['status'] == 'active'){
     add_action('wp_enqueue_scripts','widget_product_init');
+}else if(get_option('donatewise_widget_floating_status') && !empty(get_option('donatewise_widget_product')['status']) && get_option('donatewise_widget_product')['status'] == 'active'){
+    add_action('wp_enqueue_scripts','widget_product_init');
 }
 add_action( 'admin_enqueue_scripts', 'widget_product_init' );
 

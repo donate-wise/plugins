@@ -2,7 +2,7 @@
 /**
 * Plugin Name: DonateWise
 * Description: Increase your conversion rate and revenue by enabling recurring donations to the most reputable charities in your online shop.
-* Version: 1.0
+* Version: 1.0.1
 * Author: DonateWise
 * Author URI: https://donate-wise.org/
 **/
